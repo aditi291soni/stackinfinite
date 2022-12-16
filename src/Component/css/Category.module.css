@@ -1,0 +1,16 @@
+.container{
+    height: 17vh;
+    width: 30vw;
+    /* background-color: aqua; */
+    position: relative;
+    left:6vw ;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media only screen and (max-width: 600px) {
+    .container{
+        left:0 ;
+    }
+}
