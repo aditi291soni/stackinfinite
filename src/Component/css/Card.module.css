@@ -3,12 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
+img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-position: center;
+}
 .container{
-height: 60vh;
+height: 65vh;
 width: 22vw;
 position: relative;
 /* left: 10vh; */
-background-color: rgb(4, 93, 93);
+/* background-color: rgb(4, 93, 93); */
 margin-top: 20px;
 margin: 20px;
 overflow: hidden;
@@ -16,15 +22,15 @@ border-radius: 5px;
 border: 2px solid rgb(203, 202, 202);
 }
 .image{
-height: 34vh;
-width: 18vw;
-margin: 10px;
-background-color: aqua;
+height: 43vh;
+width: 20vw;
+/* margin: 4px; */
+/* background-color: aqua; */
 }
 .text{
     height: 14vh;
-    margin: 10px;
-    background-color: aqua;
+    /* margin: 5px; */
+    /* background-color: aqua; */
 }
 .btnprimary{
     background-color:#2874F0 ;
@@ -40,7 +46,7 @@ background-color: aqua;
 @media only screen and (max-width: 600px) {
    .container{
     width: 85vw;
-    height: 64vh;
+    height: 80vh;
     left: 0;
     margin: 6vw;
    } 
@@ -48,13 +54,18 @@ background-color: aqua;
     width: 73vw;
     margin: 20px;
    }
-
+a{
+    text-decoration: none;
+    color: black;
+}
    .text {
     width: 73vw;
     margin: 20px;
+    
    }
    .btnprimary {
     width: 40vw;
     height: 6vh;
+    margin-top:6vh;
    }
 }

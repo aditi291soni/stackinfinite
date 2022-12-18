@@ -1,11 +1,22 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-// import css from "./TopNavbar.module.css"
 import css from './css/TopNavbar.module.css'
+import { useDispatch,useSelector } from 'react-redux'
+interface counter{
+    id:number,
+    counter:{
+      value:number
+    },
+}
 const TopNavbar = () => {
 
-  return (
-    <>
+const dispatch = useDispatch();
+let length=useSelector((state:counter)=>state.counter.value)
+
+console.log(length)
+
+return (
+  <>
       <div className={css.container} >
         <div className={css.left}>
             <div className={css.logo}>
@@ -16,15 +27,15 @@ const TopNavbar = () => {
             </div>
             <div className={css.search}>
                 <input className={css.searchinput} type="text" placeholder="Search for Products " >
-                    {/* <i className="ri-search-line"></i> */}
                 </input>
             </div>
 
         </div>
         <Link to="/cart">
         <div className={css.right}>
-            <i className="ri-shopping-cart-fill"></i>
-            
+            <sup style={{fontSize:"16px"}}>{length}</sup>
+          
+            <i  className="ri-shopping-cart-fill"></i>
         </div>
         </Link>
       </div>

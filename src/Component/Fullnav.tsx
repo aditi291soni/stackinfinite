@@ -6,9 +6,9 @@ import TopNavbar from './TopNavbar'
 const Fullnav = () => {
   return (
     <div >
-      <TopNavbar/>
+      {/* <TopNavbar/> */}
       <Category/>
-      <Multiplecard /> 
+      <Multiplecard/> 
        </div>
   )
 }

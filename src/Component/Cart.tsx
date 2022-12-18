@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Card from '../Component/Card'
 const Cart = () => {
   return (
     <div>
-      hello cart
+      <Card/>
     </div>
   )
 }

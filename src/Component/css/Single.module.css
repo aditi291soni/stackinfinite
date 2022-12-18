@@ -5,20 +5,51 @@
 }
 .left{
     height:80vh;
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 30vw;
     border-radius: 8px;
+    overflow: hidden;
+}
+h2{
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+h3{
+    font-size: 30px;
+    text-align: left;
+    padding:20px ;
+}
+span{
+    font-size: 20px;
+        text-align: left;
+        padding: 20px;
+        font-weight: 100;
+}
+.btnprimary {
+    background-color: #2874F0;
+    height: 4vh;
+    width: 15vw;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    color: white;
+    position: relative;
+    left: 7vh;
 }
 .main{
     height: 90vh;
     width: 100vw;
-    background-color: red;
+    /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: space-around;
 }.right{
-        height: 90vh;
-        background-color: rgb(37, 154, 33);
+        position: relative;
+        top:4vh;
+        height: 50vh;
+        padding: 50px;
+        /* background-color: rgb(37, 154, 33); */
         width: 50vw;
 }
 @media only screen and (max-width: 600px) {
