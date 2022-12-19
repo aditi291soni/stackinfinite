@@ -5,8 +5,9 @@
 }
 .left{
     height:80vh;
-    /* background-color: aqua; */
     width: 30vw;
+    position:relative;
+    top:2vh;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -40,13 +41,10 @@ span{
 .main{
     height: 90vh;
     width: 100vw;
-    /* background-color: red; */
     display: flex;
-    align-items: center;
     justify-content: space-around;
 }.right{
         position: relative;
-        top:4vh;
         height: 50vh;
         padding: 50px;
         /* background-color: rgb(37, 154, 33); */

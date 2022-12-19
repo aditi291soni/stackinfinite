@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect,useState } from 'react';
 import axios from "axios";
 import { changeCounter } from '../Reducer/counterSlice';
-
+import {Cart} from './Cart';
 import css from '../Component/css/Single.module.css'
 import { productData } from '../Reducer/productSlice';
 
@@ -25,10 +25,29 @@ const res=await axios.get(`https://fakestoreapi.com/products/`)
         dispatch(productData(res.data));
         
       }
+      const cartitem=(id:number):any=>{
+  const ab=products.find((item:any)=>{
+    return item.id===id
+  })
+  let itemsList = []
+  let getitem=localStorage.getItem("cart");
+  if(getitem){
+    itemsList=JSON.parse(getitem)
+    itemsList.push(ab)
+    localStorage.setItem('cart',JSON.stringify(itemsList))
+  }
+  else{
+    itemsList.push(ab)
+    localStorage.setItem('cart',JSON.stringify(itemsList));
+
+  }
+  dispatch(changeCounter(itemsList.length))
+
+
+}
       console.log(products)
       useEffect(() => {
         getapi()
-        
       }, []);
       
       return (
@@ -48,7 +67,7 @@ const res=await axios.get(`https://fakestoreapi.com/products/`)
           <h3>Category:{e.category}</h3> <br />
           <h3>Price:$ {e.price}</h3>
           <h3>Description:<span>{e.description}</span></h3>
-        <button type="button" onClick={()=>dispatch(changeCounter(1))}  className={css.btnprimary}>Add to Cart</button>
+        <button type="button" onClick={()=>cartitem(e.id)}  className={css.btnprimary}>Add to Cart</button>
 
           </div> 
         </>

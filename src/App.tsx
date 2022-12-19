@@ -4,7 +4,6 @@ import {Routes,Route} from 'react-router-dom';
 import Fullnav from './Component/Fullnav';
 import Cart from './Component/Cart';
 import Singleitem from './Component/Singleitem';
-import CategorySingle from './Component/CategorySingle';
 import TopNavbar from './Component/TopNavbar';
 import ErrorNotfound from './Component/ErrorNotfound';
 

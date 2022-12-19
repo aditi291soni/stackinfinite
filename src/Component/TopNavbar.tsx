@@ -11,7 +11,6 @@ const TopNavbar = () => {
 
 let length=useSelector((state:counter)=>state.counter.value)
 
-console.log(length)
 
 return (
   <>

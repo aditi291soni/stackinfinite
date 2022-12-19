@@ -9,9 +9,10 @@ interface RootSate{
    id:number,image:string,title:string,price:number,description:string[],quantity:number
 
   }
-const Cart = (props: IAppProps) => {
+export const Cart = (props: IAppProps) => {
   const dispatch=useDispatch()
     const [datas,setData]=React.useState<any[]>([])
+    
 console.log(datas)
   const getdata=()=>{
     let data=localStorage.getItem("cart")
@@ -21,6 +22,7 @@ console.log(datas)
   }
   
     const increase=(id:number)=>{
+      
             let found=datas.find((item:RootSate)=>item.id===id)
             found.quantity+=1
             setData(datas.filter((item:RootSate)=>item.id !==id))

@@ -22,7 +22,7 @@ const Multiplecard = () => {
         const res= await data.json()
         dispatch(productData(res))
   }
-  const cartitem=(id:number)=>{
+ const cartitem=(id:number):any=>{
   const ab=products.find((item:any)=>{
     return item.id===id
   })
