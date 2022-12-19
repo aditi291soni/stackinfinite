@@ -1,4 +1,3 @@
-import React from 'react'
 import {Link} from 'react-router-dom'
 import css from './css/TopNavbar.module.css'
 import { useDispatch,useSelector } from 'react-redux'
@@ -10,7 +9,6 @@ interface counter{
 }
 const TopNavbar = () => {
 
-const dispatch = useDispatch();
 let length=useSelector((state:counter)=>state.counter.value)
 
 console.log(length)

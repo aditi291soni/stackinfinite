@@ -1,5 +1,4 @@
 import React from 'react'
-import { useEffect } from 'react';
 import {Link} from 'react-router-dom'
 import {useNavigate} from 'react-router-dom'
 import { productData } from '../Reducer/productSlice';
@@ -15,7 +14,6 @@ interface RootSate{
     }
 }
 const Multiplecard = () => {
-  const navigate=useNavigate()
   const dispatch = useDispatch();
   const products = useSelector((state:RootSate) => state.product.value);
   const getData=async()=>{
@@ -24,12 +22,29 @@ const Multiplecard = () => {
         const res= await data.json()
         dispatch(productData(res))
   }
-   
+  const cartitem=(id:number)=>{
+  const ab=products.find((item:any)=>{
+    return item.id===id
+  })
+  let itemsList = []
+  let getitem=localStorage.getItem("cart");
+  if(getitem){
+    itemsList=JSON.parse(getitem)
+    itemsList.push(ab)
+    localStorage.setItem('cart',JSON.stringify(itemsList))
+  }
+  else{
+    itemsList.push(ab)
+    localStorage.setItem('cart',JSON.stringify(itemsList));
 
+  }
+  dispatch(changeCounter(itemsList.length))
+
+
+}
      React.useEffect(() => {
         getData()
          }, [])
-  // console.log(products)
   return (
     
     <>
@@ -50,7 +65,7 @@ const Multiplecard = () => {
         <h6 style={{fontSize:"14px",padding:"5px",fontWeight: "200"}}>{e.description.slice(0,80)}...</h6>
       </div>
                </Link>
-      <button type="button" onClick={()=>dispatch(changeCounter(1))}  className={csss.btnprimary}>Add to Cart</button>
+      <button type="button" onClick={()=>cartitem(e.id)}  className={csss.btnprimary}>Add to Cart</button>
            </div>
 
           ))}
